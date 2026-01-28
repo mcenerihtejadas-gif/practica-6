@@ -1,0 +1,105 @@
+
+:root {
+    --purpura: #764abc;
+    --amarillo: #ffcc66;
+    --fondo: #f8f8f8;
+    --blanco: #ffffff;
+}
+
+body {
+    background-color: var(--fondo);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+    margin: 0;
+}
+
+.contenedor-bento {
+    display: grid;
+    gap: 20px;
+    max-width: 1100px;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-areas: 
+        "crear hero hero progra"
+        "crear gest consis progra"
+        "escribir crec follow follow";
+}
+
+.tarjeta {
+    background: var(--blanco);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.crear-contenido { grid-area: crear; background-color: #f9eee3; }
+.hero-ai { grid-area: hero; background-color: var(--purpura); color: white; text-align: center; }
+.programacion { grid-area: progra; background-color: #e0d4ff; }
+.escribir-ia { grid-area: escribir; background-color: var(--amarillo); }
+.gestionar-cuentas { grid-area: gest; }
+.consistencia { grid-area: consis; background-color: var(--amarillo); }
+.estadistica-crecimiento { grid-area: crec; }
+.crecer-seguidores { 
+    grid-area: follow; 
+    background-color: var(--purpura); 
+    color: white; 
+    flex-direction: row; 
+    gap: 20px; 
+    align-items: center;
+}
+
+.texto-purpura { color: var(--purpura); font-style: italic; }
+.texto-amarillo { color: var(--amarillo); }
+
+.btn-crear {
+    background: var(--amarillo);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.barras {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 80px;
+    margin-top: 15px;
+}
+
+.barra { background: #bca9f5; width: 20px; border-radius: 5px; }
+.barra.activa { background: var(--purpura); }
+
+.burbuja-chat {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.caja-seguidores {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+h1, h2, h3 { margin: 0; line-height: 1.1; }
+
+@media (max-width: 800px) {
+    .contenedor-bento {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+    }
+    .tarjeta { grid-area: auto; }
+}
